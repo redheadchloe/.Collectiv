@@ -10,7 +10,7 @@ $serie = get_terms(['taxonomy' => 'serie']);
     <h1 class="my-2 tax-title"><?php the_taxonomies($args = [
                                     'template' => '%s: %l',
                                 ]); ?></h1>
-    <h2><?php echo term_description(); ?></h2>
+    <?php echo term_description(); ?>
 </div>
 <div class="tax-container grid-4">
     <?php if (have_posts()) : ?>
