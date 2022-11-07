@@ -650,6 +650,7 @@ small {
         transition: 0.4s;
     }
 
+    // mobile menu
     ul.flex {
         position: absolute;
         top: 0;
@@ -666,6 +667,33 @@ small {
         &.active {
             padding: 30vh 0;
             height: 100vh;
+        }
+    }
+
+    nav {
+        .menu-item-has-children {
+            position: relative;
+
+
+            .sub-menu {
+                position: absolute;
+                width: max-content;
+                display: block;
+                margin: 1rem;
+
+                li {
+                    margin-bottom: 1rem;
+                }
+            }
+
+        }
+    }
+
+    // taxonomy
+
+    .top-wrapper {
+        img {
+            max-width: 90vw;
         }
     }
 }
