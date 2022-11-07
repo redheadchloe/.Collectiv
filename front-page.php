@@ -1,11 +1,19 @@
 <?php get_header(); ?>
 
+
+
 <section class="popular-container section">
     <h2>今週の話題記事</h2>
     <p class="mb-5">こちらの記事を読まれています。</p>
     <div class="popular-wrapper flex">
-        <?php if (have_posts()) : ?>
-            <?php while (have_posts()) : the_post(); ?>
+        <?php
+        $blog_query = new WP_Query([
+            'post_type' => 'post',
+            'posts_per_page' => 5,
+        ]);
+        ?>
+        <?php if ($blog_query->have_posts()) : ?>
+            <?php while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
                 <a href="<?php echo the_permalink(); ?>">
                     <div class="popular-article flex">
                         <?php if (has_post_thumbnail()) : ?>
@@ -17,10 +25,10 @@
                         <h5><?php the_title(); ?></h5>
                     </div>
                 </a>
+            <?php endwhile; ?>
+        <?php endif; ?>
     </div>
-<?php endwhile; ?>
-<?php endif; ?>
-<div class="section-btn"><a href="<?php echo home_url('/blog/'); ?>">すべての記事を見る</a></div>
+    <div class="section-btn"><a href="<?php echo home_url('/blog/'); ?>">すべての記事を見る</a></div>
 </section>
 
 <?php get_footer(); ?>

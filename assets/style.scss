@@ -499,7 +499,7 @@ aside {
 }
 
 .popular-wrapper.flex {
-    align-items: flex-end;
+    align-items: flex-start;
     overflow: scroll;
 }
 
@@ -536,10 +536,8 @@ small {
 
 .popular-article img,
 .archive-item img {
-    max-width: 300px;
-    width: 100%;
+    width: 300px;
     height: 400px;
-    object-fit: contain;
 }
 
 .popular-article picture {
