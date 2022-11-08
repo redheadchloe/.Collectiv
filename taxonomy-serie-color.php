@@ -2,6 +2,7 @@
 
 <?php
 $serie = get_terms(['taxonomy' => 'serie']);
+
 ?>
 
 <?php get_template_part('template-parts/breadcrumb'); ?>
@@ -29,11 +30,12 @@ $serie = get_terms(['taxonomy' => 'serie']);
                         <span><?php the_field('city'); ?></span>
                         <h3 class="mb-2"><?php the_title(); ?></h3>
                         <span class="flex">詳細を見る<i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
                 </a>
+
             </div>
-</div>
-<?php endwhile; ?>
-<?php endif; ?>
+        <?php endwhile; ?>
+    <?php endif; ?>
 
 </div>
 

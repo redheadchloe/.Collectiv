@@ -7,7 +7,7 @@
         'container' => false,
     ])
     ?>
-    <input type="text" placeholder="検索する">
+    <?php get_search_form(); ?>
     <button class="mobile-btn">
         <span></span>
         <span></span>

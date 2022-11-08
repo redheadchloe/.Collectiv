@@ -13,17 +13,15 @@
     <h3 class="tag-title">タグ一覧</h3>
     <ul class="tag-list mb-2">
         <?php
-        $html = '';
-        $tags = get_tags([
-            'count' => true,
-        ]);
-        foreach ($tags as $tag) {
-            $tag_link = get_tag_link($tag->term_id);
 
-            $html .= "<li><a href='{$tag_link}'>";
-            $html .= "{$tag->name}</a></li>";
-        }
-        echo $html; ?>
+        $tags = get_tags();
+        foreach ($tags as $tag) :
+            $tag_link = get_tag_link($tag->term_id);
+        ?>
+            <li>
+                <a href="<?php echo $tag_link ?>" title="<?php echo $tag->name; ?>"><?php echo $tag->name; ?> (<?php echo $tag->count; ?>)</a>
+            </li>
+        <?php endforeach; ?>
     </ul>
 
 
@@ -40,7 +38,7 @@
     <?php
     $args = [
         'post_type' => 'post',
-        'posts_per_page' => 5,
+        'posts_per_page' => 3,
         'post__not_in' => [$post->ID],
     ];
     $the_query = new WP_query($args);
