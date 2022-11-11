@@ -2,16 +2,16 @@
 
 <?php
 $serie = get_terms(['taxonomy' => 'serie']);
-
 ?>
 
 <?php get_template_part('template-parts/breadcrumb'); ?>
 
+<?php $term = get_queried_object(); ?>
+
 <div class="tax-top">
-    <h1 class="my-2 tax-title"><?php the_taxonomies($args = [
-                                    'template' => '%s: %l',
-                                ]); ?></h1>
-    <?php echo term_description(); ?>
+    <h1 class="my-2 tax-title"><?php echo $term->name; ?></h1>
+
+    <p class="category-description"><?php echo $term->description; ?></p>
 </div>
 <div class="tax-container grid-4">
     <?php if (have_posts()) : ?>

@@ -73,7 +73,7 @@ function create_series_cpt()
 add_action('init', 'create_series_cpt', 0);
 
 
-// Register Taxonomy Country
+// Register Series taxonomy serie
 function create_series_tax()
 {
 
@@ -100,3 +100,52 @@ function create_series_tax()
     register_taxonomy('serie', ['series'], $args);
 }
 add_action('init', 'create_series_tax');
+
+/**
+ * Change the excerpt more string
+ */
+// function my_theme_excerpt_more($more)
+// {
+//     if (is_tax('serie', 'retro')) {
+//         return '[...]';
+//     }
+// }
+// add_filter('excerpt_more', 'my_theme_excerpt_more');
+
+
+// inserting words instead of the dots
+// function wpdocs_excerpt_more($more)
+// {
+
+//     $more = sprintf(
+//         '<a class="read-more" href="%1$s">%2$s</a>',
+//         get_permalink(get_the_ID()),
+//         __('Read More', 'textdomain')
+//     );
+
+//     return $more;
+// }
+// add_filter('excerpt_more', 'wpdocs_excerpt_more');
+
+
+// set the excerpt length to 20
+// function wpdocs_custom_excerpt_length($length)
+// {
+//     if (is_tax('serie', 'retro')) {
+//         return 20;
+//     }
+//     // return $length;
+// }
+// add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
+
+
+// comment section
+add_filter('comment_form_default_fields', 'my_comment_form_default_fields');
+function my_comment_form_default_fields($args)
+{
+    $args['url'] = '';
+    $args['author'] = '';
+    $args['email'] = '';
+    $args['cookies'] = '';
+    return $args;
+}

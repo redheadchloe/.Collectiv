@@ -17,6 +17,7 @@
             <li><?php previous_post_link('%link', '<i class="fa-solid fa-chevron-left"></i> %title '); ?></li>
             <li><?php next_post_link('%link', '%title <i class="fa-solid fa-chevron-right"></i>'); ?></li>
         </ul>
+        <?php comments_template(); ?>
     </main>
     <?php get_template_part('template-parts/sidebar'); ?>
 </section>

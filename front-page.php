@@ -3,9 +3,9 @@
 
 
 <section class="popular-container section">
-    <h2>今週の話題記事</h2>
-    <p class="mb-5">こちらの記事を読まれています。</p>
-    <div class="popular-wrapper grid-4 py-10">
+    <h2 class="mt-10">今週の話題記事</h2>
+    <p>こちらの記事を読まれています。</p>
+    <div class="popular-wrapper grid-4 my-10">
         <?php
         $blog_query = new WP_Query([
             'post_type' => 'post',

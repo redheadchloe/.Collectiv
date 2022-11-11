@@ -40,3 +40,10 @@
 
 
 <?php get_footer(); ?>
+
+<script>
+    let contentIndex = 0;
+    const content = document.querySelector('.top-wrapper');
+    const color = content.dataset.color;
+    document.documentElement.style.setProperty('--accent-1', color);
+</script>

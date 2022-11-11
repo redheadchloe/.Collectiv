@@ -14,6 +14,12 @@
         wp_body_open();
     }
     ?>
+    <div class="preloader">
+        <div class="progress-bar">
+            <h1 class="text-center percent"></h1>
+            <div class="progress"></div>
+        </div>
+    </div>
 
     <header>
         <?php get_template_part('template-parts/nav'); ?>
