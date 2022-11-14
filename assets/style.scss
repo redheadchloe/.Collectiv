@@ -747,7 +747,9 @@ aside {
     .commentlist {
         .comment {
             .comment-body {
+                padding: 2vw 1vh;
                 margin-bottom: 2rem;
+                border: var(--border-gray);
 
                 .comment-meta {
                     a {
@@ -757,7 +759,6 @@ aside {
 
                 p {
                     margin: 2rem 0 1rem;
-                    border-bottom: var(--border-gray);
                 }
 
                 .reply {
@@ -772,8 +773,6 @@ aside {
 
             .children {
                 margin-left: 2rem;
-                padding-left: .5rem;
-                border-left: var(--border-gray);
             }
         }
 
