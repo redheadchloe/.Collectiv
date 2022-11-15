@@ -616,19 +616,39 @@ aside {
 
 // archive-series.php
 .archive-series-container {
-    &:nth-of-type(odd) {
-        img {
-            grid-area: 1;
-        }
-    }
-
-    &.grid {
-        grid-gap: 0;
-    }
-
 
     img {
         max-width: 100%;
+    }
+
+    .archive-series-text {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+
+        .section-btn {
+            text-align: initial;
+
+            a {
+                color: #fff;
+                border: 1px solid #fff;
+            }
+        }
+
+        &:first-of-type {
+            background: linear-gradient(to right, rgba(64, 59, 74, .7), rgba(231, 233, 187, .7)), url(../img/archive-retro.jpeg) center no-repeat;
+            background-size: cover;
+        }
+
+        &:nth-of-type(2) {
+            background: linear-gradient(to right, rgba(255, 126, 95, .4), rgba(254, 180, 123, .4)), url(../img/archive-color.jpeg) bottom no-repeat;
+            background-size: cover;
+        }
+
     }
 }
 

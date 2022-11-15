@@ -6,31 +6,19 @@
 
 
 <?php
-$term = get_term_by('slug', 'color', 'serie');
-$term_link = get_term_link($term);
+$terms = get_terms(['taxonomy' => 'serie']);
+if (!empty($terms)) :
 ?>
-<div class="archive-series-container grid">
-    <div class="archive-series-text">
-        <h2 class="mb-2"><?php echo $term->name; ?></h2>
-        <p><?php echo $term->description; ?></p>
-        <div class="mt-5 section-btn"><a href="<?php echo $term_link; ?>">シリーズを見る</a></div>
+    <div class="archive-series-container">
+        <?php foreach ($terms as $term) : ?>
+            <div class="archive-series-text my-2">
+                <h2><?php echo $term->name; ?></h2>
+                <p class="my-2"><?php echo $term->description; ?></p>
+                <div class="section-btn"><a href="<?php echo get_term_link($term); ?>">シリーズを見る</a></div>
+            </div>
+        <?php endforeach; ?>
     </div>
-    <img src="<?php echo get_template_directory_uri() ?>/img/archive-color.jpeg" alt="">
-</div>
-
-<?php
-$term = get_term_by('slug', 'retro', 'serie');
-$term_link = get_term_link($term);
-?>
-<div class="archive-series-container grid">
-    <div class="archive-series-text">
-        <h2 class="mb-2"><?php echo $term->name; ?></h2>
-        <p><?php echo $term->description; ?></p>
-        <div class="mt-5 section-btn"><a href="<?php echo $term_link; ?>">シリーズを見る</a></div>
-    </div>
-    <img src="<?php echo get_template_directory_uri() ?>/img/archive-retro.jpeg" alt="">
-</div>
-
+<?php endif; ?>
 
 
 <?php get_footer(); ?>
