@@ -1,4 +1,3 @@
-console.clear();
 // preloader
 const preloader = document.querySelector('.preloader');
 var percent = document.querySelector('.percent');
@@ -21,6 +20,16 @@ var loading = setInterval(animate, 50);
 window.addEventListener('DOMContentLoaded', () => {
     preloader.classList.add('up');
     clearInterval(loading);
+})
+
+// shrinked nav
+const header = document.querySelector('header');
+const height = header.getBoundingClientRect().height;
+console.log(height);
+window.addEventListener('scroll', () => {
+    document.body.scrollTop > height ?
+        header.classList.add('shrinked') :
+        header.classList.remove('shrinked');
 })
 
 // to top

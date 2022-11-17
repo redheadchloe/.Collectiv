@@ -61,7 +61,7 @@ html {
 }
 
 body {
-    max-width: 80vw;
+    max-width: 90vw;
     margin: auto;
     min-height: 100vh;
 }
@@ -188,13 +188,14 @@ a.logo {
     }
 }
 
-// nav
+
 
 nav {
     padding: 2rem 0;
     display: grid;
     grid-template-columns: 30% 40% 30%;
     align-items: center;
+
 
     .menu-item-has-children {
         position: relative;
@@ -940,30 +941,19 @@ a.error-404 {
             top: 0;
             left: -100vw;
             height: 100vh;
-            padding: 30vh 10vh;
+            width: 70vw;
+            padding-left: 5vw;
             overflow: hidden;
             background: #fff;
             flex-direction: column;
             z-index: 10;
             transition: var(--transition-1);
             align-items: flex-start;
-            justify-content: start;
+            justify-content: center;
 
 
             &.active {
                 left: 0;
-                animation: height .4s linear;
-
-                @keyframes height {
-                    from {
-                        height: 0;
-                    }
-
-                    to {
-                        height: 100%;
-                    }
-                }
-
             }
 
             &>li {
@@ -1016,6 +1006,20 @@ a.error-404 {
         flex-direction: column;
     }
 
+    header {
+        position: sticky;
+        top: 0;
+
+        &.shrinked {
+            z-index: 10;
+            background: #fff;
+            transition: all .4s ease-in-out;
+
+            nav {
+                padding: 1rem 0;
+            }
+        }
+    }
 
     // archive-series.php
     .tax-top {
