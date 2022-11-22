@@ -434,6 +434,7 @@ button {
             width: 100%;
             position: absolute;
             bottom: 0;
+            left: 0;
             z-index: 1;
             background: rgba(255, 255, 255, .6);
 
@@ -872,6 +873,7 @@ button#top {
     position: fixed;
     right: 3%;
     bottom: -100%;
+    z-index: 10;
     border: none;
     animation: float 2s linear infinite;
 

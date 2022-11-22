@@ -8,7 +8,7 @@ $serie = get_terms(['taxonomy' => 'serie']);
 
 <?php $term = get_queried_object(); ?>
 
-<div class="tax-top">
+<div class="tax-top text-center">
     <h1 class="tax-title"><?php echo $term->name; ?></h1>
     <p class="category-description"><?php echo $term->description; ?></p>
 </div>
