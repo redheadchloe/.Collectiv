@@ -27,14 +27,15 @@ button {
     cursor: pointer;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 
 img,
 span {
     display: inline-block;
-}
-
-img {
-    object-fit: cover;
 }
 
 a,
@@ -61,7 +62,8 @@ html {
 }
 
 body {
-    max-width: 90vw;
+    width: 90vw;
+    max-width: 1024px;
     margin: auto;
     min-height: 100vh;
 }
@@ -300,8 +302,7 @@ button {
 
 .top-wrapper {
     img {
-        max-width: 600px;
-        max-height: 500px;
+        height: 500px;
         animation: fadeIn 1s linear;
 
         @keyframes fadeIn {
@@ -430,11 +431,6 @@ button {
                     transition: var(--transition-1);
                 }
             }
-
-            img {
-                width: 100%;
-                object-fit: cover;
-            }
         }
 
         .text-wrapper {
@@ -488,18 +484,73 @@ aside {
 
 /* front page popular section */
 
+.series-container {
+    display: flex;
+
+    .series-slide {
+        width: 100%;
+        margin-right: -100%;
+
+        h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 1.5rem;
+            animation: scale .8s ease-in forwards;
+
+            @keyframes scale {
+                from {
+                    transform: translate(-50%, -50%) scale(1);
+                }
+
+                to {
+                    transform: translate(-50%, -50%) scale(1.2);
+                }
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: rgba(0, 0, 0, .3);
+        }
+
+
+        &.slide {
+            display: flex;
+            left: 100%;
+            animation: slide .6s ease-out;
+
+            @keyframes slide {
+                from {
+                    opacity: 0.4;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.popular-wrapper.grid-4 {
+    place-items: start start;
+}
+
 .popular-article {
     cursor: pointer;
     position: relative;
-    width: 250px;
 
-    img {
-        width: 100%;
-    }
-
-    h5 {
+    h3 {
         word-break: break-all;
     }
+
 }
 
 .popular-article:hover {
@@ -569,7 +620,6 @@ aside {
     .retro-wrapper {
         border: var(--border-black);
         position: relative;
-        max-width: fit-content;
 
         &:hover::after {
             position: absolute;
@@ -596,13 +646,6 @@ aside {
             grid-gap: 0;
             grid-template-columns: auto;
             place-items: start center;
-        }
-
-        .img-wrapper {
-            img {
-                max-width: 500px;
-                max-height: 500px;
-            }
         }
 
         .retro-text {
@@ -984,13 +1027,6 @@ a.error-404 {
         }
     }
 
-    // taxonomy
-
-    .top-wrapper {
-        img {
-            max-width: 90vw;
-        }
-    }
 }
 
 @media(max-width:600px) {
@@ -1070,17 +1106,6 @@ a.error-404 {
         }
     }
 
-    .retro-container {
-        .retro-wrapper {
-            .img-wrapper {
-                img {
-                    max-width: 350px;
-                    max-height: 400px;
-                }
-            }
-
-        }
-    }
 
     .concept-container {
 

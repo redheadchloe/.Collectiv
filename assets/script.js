@@ -62,4 +62,3 @@ mobileBtn.addEventListener('click', function () {
 const year = document.querySelector('.time');
 year.innerHTML = new Date().getFullYear();
 
-

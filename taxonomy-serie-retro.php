@@ -24,7 +24,14 @@ $term = get_queried_object();
                 <div class="retro-wrapper grid">
                     <div class="img-wrapper">
                         <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail(); ?>
+                            <?php the_post_thumbnail(
+                                'post-thumbnail',
+                                [
+                                    'sizes' => '(max-width: 400px) 350px, 
+                                    (max-width:1024px) 500px,
+                                    90vw',
+                                ]
+                            ); ?>
                         <?php else : ?>
                             <img src="https://dummyimage.com/400x300/000/fff.png&text=Hello+World!">
                         <?php endif; ?>

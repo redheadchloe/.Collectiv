@@ -4,7 +4,7 @@
 <section class="my-10 grid index-container">
     <main>
         <?php if (has_post_thumbnail()) : ?>
-            <?php the_post_thumbnail('medium'); ?>
+            <?php the_post_thumbnail(); ?>
         <?php else : ?>
             <img src="https://dummyimage.com/400x300/000/fff.png&text=Hello+World!">
         <?php endif; ?>
