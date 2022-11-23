@@ -23,7 +23,7 @@ add_theme_support('html5', [
 // paths for styles and scripts
 function blog_enqueue_scripts()
 {
-    wp_register_style('style', get_template_directory_uri() . '/css/style.min.css');
+    wp_register_style('style', get_template_directory_uri() . '/css/style.min.css', [], filemtime(get_theme_file_path('/css/style.min.css')), 'all');
     wp_register_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
     wp_register_script('script', get_template_directory_uri() . '/assets/script.js', [], false, true);
 
