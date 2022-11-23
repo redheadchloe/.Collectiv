@@ -231,7 +231,7 @@ nav {
 }
 
 
-a {
+ul li a {
     position: relative;
 }
 
@@ -483,54 +483,51 @@ aside {
 /* front page popular section */
 
 .series-container {
-    display: flex;
 
-    .series-slide {
-        width: 100%;
-        margin-right: -100%;
+    a {
+        position: relative;
+        z-index: -100;
 
-        h1 {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            font-size: 1.5rem;
-            animation: scale .8s ease-in forwards;
-
-            @keyframes scale {
-                from {
-                    transform: translate(-50%, -50%) scale(1);
-                }
-
-                to {
-                    transform: translate(-50%, -50%) scale(1.2);
-                }
-            }
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
+        .series-slide {
             width: 100%;
-            height: 100%;
-            z-index: 1;
-            background: rgba(0, 0, 0, .3);
-        }
+            margin-right: -100%;
 
 
-        &.slide {
-            display: flex;
-            left: 100%;
-            animation: slide .6s ease-out;
 
-            @keyframes slide {
-                from {
-                    opacity: 0.4;
+            h1 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(255, 255, 255, .6);
+                font-size: 1.5rem;
+                animation: scale .8s ease-in forwards;
+
+                @keyframes scale {
+                    from {
+                        transform: translate(-50%, -50%) scale(1);
+                    }
+
+                    to {
+                        transform: translate(-50%, -50%) scale(1.2);
+                    }
                 }
 
-                to {
-                    opacity: 1;
+            }
+
+            &.slide {
+                display: flex;
+                left: 100%;
+                animation: slide .6s ease-out;
+
+                @keyframes slide {
+                    from {
+                        opacity: 0.4;
+                    }
+
+                    to {
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -616,6 +613,7 @@ aside {
 
 
     .retro-wrapper {
+        z-index: -100;
         border: var(--border-black);
         position: relative;
 
@@ -988,7 +986,7 @@ a.error-404 {
             background: #fff;
             padding-left: 5vw;
             overflow: hidden;
-            flex-direction: column;
+            // flex-direction: column;
             z-index: 10;
             transition: var(--transition-1);
             align-items: flex-start;

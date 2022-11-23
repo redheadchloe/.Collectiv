@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="my-10 series-container text-center">
+<section class="my-10 series-container">
     <?php
     $series_query = new WP_Query([
         'post_type' => 'series',
@@ -9,7 +9,7 @@
     <?php if ($series_query->have_posts()) :
         while ($series_query->have_posts()) :
             $series_query->the_post(); ?>
-            <a class="text-center" href="<?php echo get_permalink(); ?>">
+            <a href="<?php echo get_permalink(); ?>">
                 <div class="series-slide">
                     <?php if (has_post_thumbnail()) : ?>
                         <?php the_post_thumbnail(
