@@ -20,6 +20,9 @@
             <div class="progress"></div>
         </div>
     </div>
+    <div class="scroll-indicator">
+
+    </div>
 
     <header>
         <?php get_template_part('template-parts/nav'); ?>

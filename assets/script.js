@@ -17,15 +17,29 @@ animate = () => {
     }
 }
 var loading = setInterval(animate, 50);
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     preloader.classList.add('up');
     clearInterval(loading);
 })
 
+// horizontal scroll indicator
+const scrollIndicator = document.querySelector('.scroll-indicator');
+
+updateScroll = () => {
+    const scrollTop = window.scrollY;
+    const scrollHeight = document.documentElement.scrollHeight;
+    scrollParent = scrollHeight - window.innerHeight;
+    scrollPercent = scrollTop / scrollParent;
+    // console.log(scrollPercent);
+    scrollIndicator.style.width = (scrollPercent * 100) + '%';
+}
+
+window.addEventListener('scroll', updateScroll);
+
+
 // shrinked nav
 const header = document.querySelector('header');
 const height = header.getBoundingClientRect().height;
-console.log(height);
 window.addEventListener('scroll', () => {
     document.body.scrollTop > height ?
         header.classList.add('shrinked') :

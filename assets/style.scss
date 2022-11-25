@@ -177,10 +177,12 @@ a.logo {
     place-items: center;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 100;
 
     &.up {
-        transform: translateY(-100%);
+        // transform: translateY(-100%);
+        display: none;
         transition: var(--transition-2);
     }
 
@@ -188,6 +190,16 @@ a.logo {
         height: 2px;
         background: #333;
     }
+}
+
+// horizontal scroll indicator
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: .5rem;
+    background: darkgray;
 }
 
 
@@ -906,7 +918,7 @@ a.error-404 {
     text-decoration: underline;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
     body {
         width: 90vw;
     }
