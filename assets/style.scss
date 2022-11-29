@@ -716,7 +716,9 @@ aside {
 
 
     .concept-item {
-        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        margin: 5vh 0;
 
         .concept-title {
             border-bottom: var(--border-black);
@@ -731,14 +733,47 @@ aside {
         &:first-of-type {
             .concept-title {
                 text-align: end;
+                overflow: hidden;
+
+                &.animate * {
+                    animation: fadeRight .5s ease-in;
+
+                    @keyframes fadeRight {
+                        from {
+                            transform: translateX(100%);
+                        }
+
+                        to {
+                            transform: translateX(0);
+                        }
+                    }
+                }
             }
 
             .concept-img {
-                float: right;
+                text-align: end;
             }
         }
 
         &:nth-of-type(2) {
+
+            .concept-title {
+                overflow: hidden;
+
+                &.animate * {
+                    animation: fadeLeft .5s ease-in;
+
+                    @keyframes fadeLeft {
+                        from {
+                            transform: translateX(-100%);
+                        }
+
+                        to {
+                            transform: translateX(0);
+                        }
+                    }
+                }
+            }
 
             .concept-img {
                 p {
@@ -748,6 +783,23 @@ aside {
         }
 
         &:last-of-type {
+            .concept-title {
+                overflow: hidden;
+
+                &.animate * {
+                    animation: fadeUp .5s ease-in;
+
+                    @keyframes fadeUp {
+                        from {
+                            transform: translateY(100%);
+                        }
+
+                        to {
+                            transform: translateY(0);
+                        }
+                    }
+                }
+            }
 
             .concept-img {
                 p {
@@ -755,6 +807,7 @@ aside {
                 }
             }
         }
+
     }
 
     svg {
@@ -1121,7 +1174,7 @@ a.error-404 {
 
         img,
         p {
-            width: 300px;
+            max-width: 100%;
         }
 
         .concept-item {

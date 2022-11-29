@@ -57,4 +57,14 @@
     }
 
     window.addEventListener('scroll', onScroll)
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            entry.target.classList.toggle('animate', entry.isIntersecting);
+        })
+    })
+
+    const titles = document.querySelectorAll('.concept-title');
+    console.log(titles);
+    titles.forEach(title => observer.observe(title));
 </script>
